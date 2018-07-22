@@ -1,0 +1,41 @@
+buildscript {
+    repositories {
+        maven {
+            name = 'forge'
+            url = 'http://files.minecraftforge.net/maven'
+        }
+    }
+
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
+    }
+}
+
+plugins {
+    id 'org.spongepowered.plugin' version '0.8.1'
+    id 'net.minecrell.vanillagradle.server' version '2.2-3'
+    id 'java'
+    id 'application'
+}
+
+minecraft {
+    version = '1.10.2'
+    mappings = "stable_29"
+}
+
+group = 'com.pixelfoundries.pixelplots'
+version = '0.1'
+description = 'New plot plugin for Sponge API 7+'
+mainClassName = 'com.pixelfoundries.pixelplots.PixelPlots'
+compileJava.options.encoding = 'UTF-8'
+
+dependencies {
+    compile 'org.spongepowered:spongeapi:7.0.0-SNAPSHOT'
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
